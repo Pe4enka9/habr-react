@@ -1,0 +1,25 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comment {
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background-color: var(--secondary);
+
+    -webkit-border-radius: var(--lowRadius);
+    -moz-border-radius: var(--lowRadius);
+    border-radius: var(--lowRadius);
+}
+
+.comment__header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}

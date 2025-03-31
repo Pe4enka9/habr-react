@@ -1,0 +1,29 @@
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    width: 3rem;
+    height: 3rem;
+
+    background: url("../../images/icons/star.svg") no-repeat center / contain;
+
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+    filter: drop-shadow(0 0 5px gold);
+}
+
+.stars input:checked ~ label {
+    background: url("../../images/icons/star-active.svg") no-repeat center / contain;
+}

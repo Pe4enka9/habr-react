@@ -1,0 +1,16 @@
+form {
+    width: 30rem;
+}
+
+label sup {
+    color: #f00;
+
+    font-size: 1.2rem;
+}
+
+.buttons {
+    margin-top: 1rem;
+
+    display: flex;
+    gap: 1rem;
+}

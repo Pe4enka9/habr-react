@@ -1,0 +1,9 @@
+:root {
+    --back: #F0F7F4;
+    --main: #F6C28B;
+    --mainHover: #caa172;
+    --secondary: #5296A5;
+    --text: #32292F;
+    --radius: 1rem;
+    --lowRadius: .5rem;
+}

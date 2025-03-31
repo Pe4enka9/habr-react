@@ -1,0 +1,10 @@
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+header nav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
