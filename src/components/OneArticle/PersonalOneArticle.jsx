@@ -4,6 +4,7 @@ import starActive from '../../images/icons/star-active.svg';
 import {useParams} from "react-router-dom";
 import Comment from "../Comment/Comment.jsx";
 import convertDate from "../../convertDate.js";
+import Article from "../Article.jsx";
 
 export default function PersonalOneArticle({apiUrl, token}) {
     const {slug} = useParams();
@@ -44,6 +45,8 @@ export default function PersonalOneArticle({apiUrl, token}) {
             },
             body: JSON.stringify({rating: rate}),
         })
+            .then(res => res.json())
+            .then(data => setArticle(data))
             .catch(err => console.error(err));
     };
 
@@ -51,6 +54,8 @@ export default function PersonalOneArticle({apiUrl, token}) {
 
     const handleComment = (e) => {
         e.preventDefault();
+
+        if (!token) return;
 
         if (!commentText) return;
 
@@ -70,35 +75,11 @@ export default function PersonalOneArticle({apiUrl, token}) {
             .catch(err => console.error(err));
     };
 
-    const date = convertDate(article.date_of_publication);
-    const articleImage = `https://articles.19qqw.ru/storage/${article.image}`;
-
     return (
         <>
-            <h1 className="mb-2">{article.name}</h1>
-
-            <section className="articles__item mb-2">
-                <div className="item__header">
-                    <h3 className="header__author">{article.author?.login}</h3>
-                    <time>{date}</time>
-                </div>
-
-                <div className="item__body">
-                    <h2>{article.name}</h2>
-                    <p>{article.text}</p>
-
-                    {article.image ? (
-                        <div className="body__img">
-                            <img src={articleImage || ''} alt="Фото статьи"/>
-                        </div>
-                    ) : null}
-                </div>
-
-                <div className="rating">
-                    <img src={starActive || ''} alt="Рейтинг"/>
-                    <h3>{article.rating}</h3>
-                </div>
-            </section>
+            <Article className="mb-2" date={article.date_of_publication} slug={article.slug} image={article.image}
+                     rating={Number(article.rating).toFixed(2)}
+                     author={article.author?.login} title={article.name} personal={true}/>
 
             <form className="mb-2" onSubmit={handleRate}>
                 <div className="input-container">

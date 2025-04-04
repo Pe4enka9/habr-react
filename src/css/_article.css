@@ -27,20 +27,14 @@
 }
 
 .articles__item .item__body .body__img {
-    max-height: 80vh;
-
-    -webkit-border-radius: var(--lowRadius);
-    -moz-border-radius: var(--lowRadius);
-    border-radius: var(--lowRadius);
-
-    overflow: hidden;
+    height: 70vh;
 }
 
-.articles__item .item__body img {
+.articles__item .item__body .body__img img {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .articles__item .rating {

@@ -2,7 +2,7 @@ import star from "../images/icons/star-active.svg";
 import {Link} from "react-router-dom";
 import convertDate from "../convertDate.js";
 
-export default function Article({author, date, title, rating, image, slug, personal = false}) {
+export default function Article({author, date, title, rating, image, slug, personal = false, className = ''}) {
     const normalDate = convertDate(date);
 
     const link = `/articles/${slug}`;
@@ -10,7 +10,7 @@ export default function Article({author, date, title, rating, image, slug, perso
     const articleImage = `https://articles.19qqw.ru/storage/${image}`;
 
     return (
-        <Link to={personal ? personalLink : link} className="articles__item">
+        <Link to={personal ? personalLink : link} className={`articles__item ${className}`}>
             <div className="item__header">
                 <h3 className="header__author">{author}</h3>
                 <time>{normalDate}</time>
