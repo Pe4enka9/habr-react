@@ -19,7 +19,7 @@ export default function Article({author, date, title, rating, image, slug, perso
             <div className="item__body">
                 <h2>{title}</h2>
 
-                {articleImage ? (
+                {image ? (
                     <div className="body__img">
                         <img src={articleImage || ''} alt="Фото статьи"/>
                     </div>

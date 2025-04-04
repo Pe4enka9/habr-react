@@ -87,7 +87,7 @@ export default function OneArticle({apiUrl, token}) {
                     <h2>{article.name}</h2>
                     <p>{article.text}</p>
 
-                    {articleImage ? (
+                    {article.image ? (
                         <div className="body__img">
                             <img src={articleImage || ''} alt="Фото статьи"/>
                         </div>
