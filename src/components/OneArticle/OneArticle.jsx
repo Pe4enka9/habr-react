@@ -1,9 +1,7 @@
 import {useEffect, useState} from "react";
 import './stars.css';
-import starActive from '../../images/icons/star-active.svg';
 import {useParams} from "react-router-dom";
 import Comment from "../Comment/Comment.jsx";
-import convertDate from "../../convertDate.js";
 import Article from "../Article.jsx";
 
 export default function OneArticle({apiUrl, token}) {
@@ -34,6 +32,8 @@ export default function OneArticle({apiUrl, token}) {
 
     const handleRate = (e) => {
         e.preventDefault();
+
+        if (!token) return;
 
         if (!rate) return;
 
