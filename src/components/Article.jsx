@@ -7,7 +7,6 @@ export default function Article({author, date, title, rating, image, slug, perso
 
     const link = `/articles/${slug}`;
     const personalLink = `/personal/articles/${slug}`;
-    // const articleImage = `https://articles.19qqw.ru/storage/${image}`;
 
     return (
         <Link to={personal ? personalLink : link} className={`articles__item ${className}`}>
