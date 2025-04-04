@@ -71,6 +71,7 @@ export default function PersonalOneArticle({apiUrl, token}) {
     };
 
     const date = convertDate(article.date_of_publication);
+    const articleImage = `https://articles.19qqw.ru/storage/${article.image}`;
 
     return (
         <>
@@ -86,9 +87,11 @@ export default function PersonalOneArticle({apiUrl, token}) {
                     <h2>{article.name}</h2>
                     <p>{article.text}</p>
 
-                    <div className="body__img">
-                        <img src="#" alt="Фото статьи"/>
-                    </div>
+                    {articleImage ? (
+                        <div className="body__img">
+                            <img src={articleImage || ''} alt="Фото статьи"/>
+                        </div>
+                    ) : null}
                 </div>
 
                 <div className="rating">

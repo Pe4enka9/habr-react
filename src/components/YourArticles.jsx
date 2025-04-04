@@ -38,7 +38,7 @@ export default function YourArticles({apiUrl, token}) {
                 {articles.map(article => (
                     <div key={article.id}>
                         <Article date={article.date_of_publication} author={article.author?.login}
-                                 title={article.name} slug={article.slug} rating={article.rating} personal={true}/>
+                                 title={article.name} slug={article.slug} image={article.image} rating={article.rating} personal={true}/>
 
                         <div className="buttons">
                             <Link to={`/personal/articles/edit/${article.slug}`} className="btn">Редактировать</Link>

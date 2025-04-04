@@ -73,6 +73,7 @@ export default function OneArticle({apiUrl, token}) {
     };
 
     const date = convertDate(article.date_of_publication);
+    const articleImage = `https://articles.19qqw.ru/storage/${article.image}`;
 
     return (
         <>
@@ -86,9 +87,9 @@ export default function OneArticle({apiUrl, token}) {
                     <h2>{article.name}</h2>
                     <p>{article.text}</p>
 
-                    {article.image ? (
+                    {articleImage ? (
                         <div className="body__img">
-                            <img src={article.image || ''} alt="Фото статьи"/>
+                            <img src={articleImage || ''} alt="Фото статьи"/>
                         </div>
                     ) : null}
                 </div>
