@@ -13,7 +13,8 @@ import PersonalOneArticle from "./components/OneArticle/PersonalOneArticle.jsx";
 import EditArticle from "./components/EditArticle.jsx";
 
 export default function App() {
-    const apiUrl = 'https://articles.19qqw.ru/api';
+    // const apiUrl = 'https://articles.19qqw.ru/api';
+    const apiUrl = 'http://127.0.0.1:8000/api';
     const [token, setToken] = useState(localStorage.getItem('token'));
 
     return (

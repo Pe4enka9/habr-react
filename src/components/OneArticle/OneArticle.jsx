@@ -44,6 +44,8 @@ export default function OneArticle({apiUrl, token}) {
             },
             body: JSON.stringify({rating: rate}),
         })
+            .then(res => res.json())
+            .then(data => setArticle(data))
             .catch(err => console.error(err));
     };
 
@@ -74,8 +76,6 @@ export default function OneArticle({apiUrl, token}) {
 
     return (
         <>
-            <h1 className="mb-2">{article.name}</h1>
-
             <section className="articles__item mb-2">
                 <div className="item__header">
                     <h3 className="header__author">{article.author?.login}</h3>
@@ -86,14 +86,16 @@ export default function OneArticle({apiUrl, token}) {
                     <h2>{article.name}</h2>
                     <p>{article.text}</p>
 
-                    <div className="body__img">
-                        <img src="#" alt="Фото статьи"/>
-                    </div>
+                    {article.image ? (
+                        <div className="body__img">
+                            <img src={article.image || ''} alt="Фото статьи"/>
+                        </div>
+                    ) : null}
                 </div>
 
                 <div className="rating">
                     <img src={starActive || ''} alt="Рейтинг"/>
-                    <h3>{article.rating}</h3>
+                    <h3>{Number(article.rating).toFixed(2)}</h3>
                 </div>
             </section>
 
