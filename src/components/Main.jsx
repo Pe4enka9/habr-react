@@ -20,7 +20,6 @@ export default function Main({apiUrl}) {
 
     return (
         <>
-            <h1>Привет</h1>
             <h1 className="mb-2">Главная</h1>
 
             <div className="filters mb-2">
