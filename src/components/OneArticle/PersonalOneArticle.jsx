@@ -78,8 +78,8 @@ export default function PersonalOneArticle({apiUrl, token}) {
     return (
         <>
             <Article className="mb-2" date={article.date_of_publication} slug={article.slug} image={article.image}
-                     rating={Number(article.rating).toFixed(2)}
-                     author={article.author?.login} title={article.name} personal={true}/>
+                     rating={Number(article.rating).toFixed(2)} text={article.text} author={article.author?.login}
+                     title={article.name} personal={true}/>
 
             <form className="mb-2" onSubmit={handleRate}>
                 <div className="input-container">

@@ -78,8 +78,8 @@ export default function OneArticle({apiUrl, token}) {
     return (
         <>
             <Article className="mb-2" date={article.date_of_publication} slug={article.slug} image={article.image}
-                     rating={Number(article.rating).toFixed(2)}
-                     author={article.author?.login} title={article.name}/>
+                     rating={Number(article.rating).toFixed(2)} text={article.text} author={article.author?.login}
+                     title={article.name}/>
 
             <form className="mb-2" onSubmit={handleRate}>
                 <div className="input-container">
